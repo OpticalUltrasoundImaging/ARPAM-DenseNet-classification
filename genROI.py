@@ -398,7 +398,7 @@ def genModelInput3_wref(imqual_in,ROI_info):
     USscan = cv2.medianBlur(USscan.astype('float32'), 3)
     ub_US = 0.45*np.max(USscan)
     USscan[USscan > ub_US]=ub_US
-    USscan[USscan < ub_US/12] = 0
+    USscan[USscan < ub_US/15] = 0
     
     w_roi = int(ROI_info['ROI_dims'][0])
     h_roi = int(ROI_info['ROI_dims'][1])
@@ -424,9 +424,9 @@ def genModelInput3_wref(imqual_in,ROI_info):
         PAscan = cv2.medianBlur(PAscan.astype('float32'), 3)
         ub_PA = 0.375*np.max(PAscan)
         PAscan[PAscan>ub_PA]=ub_PA
-        PAscan[PAscan<ub_PA/15] = 0
+        PAscan[PAscan<ub_PA/10] = 0
         
-        transformUSPA = transforms.Compose([transforms.Normalize([0.25,0.5,0.35,0.25,0.5],[0.25,0.5,0.4,0.25,0.5]),
+        transformUSPA = transforms.Compose([transforms.Normalize([0.25,0.51,0.35,0.25,0.5],[0.25,0.5,0.4,0.25,0.5]),
                                             transforms.Resize([128,64])])
         
         for roi_idx in range(N_roi):
@@ -438,7 +438,7 @@ def genModelInput3_wref(imqual_in,ROI_info):
             PAroi_i = np.float32(PAfactor*np.array(PAroi_i / ub_PA))
             deriv_i = np.absolute(cv2.Sobel(USroi_i,cv2.CV_64F,0,1,ksize=5))
             deriv_i = np.float32(deriv_i / np.max(deriv_i))
-            derivroi_i = np.float32(0.5*deriv_i + 1*PAroi_i)
+            derivroi_i = np.float32(2.5*deriv_i + 1*PAroi_i)
           
             
             roi_i = torch.tensor(np.stack([PAroi_i,USroi_i,derivroi_i,PAbaseline_uspa,USbaseline_uspa],axis=0))
