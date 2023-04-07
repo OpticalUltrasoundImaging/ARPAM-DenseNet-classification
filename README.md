@@ -16,9 +16,7 @@ Identifying complete response (CR) after rectal cancer preoperative treatment is
 
 Citation: Lin, Y., Kou, S., Nie, H.,... & Zhu, Q. (2023). Deep learning based on co-registered ultrasound and photoacoustic imaging improves the assessment of rectal cancer treatment response. *Biomedical Optics Express*, DOI: 10.1364/BOE.487647
 
-# Requirements
-
 # Details
 
 # Contact
-For any question, please contact Yixiao Lin at lin.yixiao@wustl.edu.
+For any questions, please contact Yixiao Lin at lin.yixiao@wustl.edu.
