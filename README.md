@@ -5,12 +5,12 @@ Yixiao Lin (https://opticalultrasoundimaging.wustl.edu/)
 We use a deep learning DenseNet to classify the presence of residual rectal cancer after neoadjuvant therapy using co-registered ultrasound and photoacoustic images.
 <figure>
   <img src="https://github.com/OpticalUltrasoundImaging/ARPAM-DenseNet-classification/blob/main/model%20diagram.PNG" alt="Model diagram">
-  <figcaption>US-PAM DenseNet model diagram</figcaption>
+  <figcaption>Fig 1. US-PAM DenseNet model diagram</figcaption>
 </figure>
 
 <figure>
   <img src="https://github.com/OpticalUltrasoundImaging/ARPAM-DenseNet-classification/blob/main/model%20prediction%20pipeline.PNG" alt="Model prediction">
-  <figcaption>Model's prediction and interpretation on a co-registered US-PAM B scan</figcaption>
+  <figcaption>Fig 2. Model's prediction and interpretation on a co-registered US-PAM B scan</figcaption>
 </figure>
 
 # Paper abstract
@@ -22,13 +22,14 @@ Citation: Lin, Y., Kou, S., Nie, H.,... & Zhu, Q. (2023). Deep learning based on
 model_evaluate.py loads the trained model and the example B scan shown below.
 <figure>
   <img src="https://github.com/OpticalUltrasoundImaging/ARPAM-DenseNet-classification/blob/main/example_USPAM_Bscan.PNG" alt="Example scan">
-  <figcaption>Example co-registered B scan for illustration</figcaption>
+  <figcaption>Fig 3. Example co-registered B scan for illustration</figcaption>
 </figure>
+
 
 The model will then classify the B scan and generate an attention heat map highlighting normal (green) and cancer (red) regions.
 <figure>
   <img src="https://github.com/OpticalUltrasoundImaging/ARPAM-DenseNet-classification/blob/main/example_model_prediction.PNG" alt="Example prediction">
-  <figcaption>Model predictions on the example B scan</figcaption>
+  <figcaption>Fig 4. Model predictions on the example B scan</figcaption>
 </figure>
 
 # Contact
